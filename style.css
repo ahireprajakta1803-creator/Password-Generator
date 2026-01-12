@@ -1,0 +1,216 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap");
+
+/* :root {
+  --primary: #00fff0;
+  --primary-dark: #00ffe1;
+  --accent: #ff00aa;
+  --accent-glow: #ff33cc;
+  --background: #0b0b0f;
+  --panel-bg: rgba(15, 15, 25, 0.9);
+  --text: #ffffff;
+  --weak: #ff0055;
+  --medium: #ffae00;
+  --strong: #00ff77;
+} */
+:root {
+    --primary: #00a6a0;
+    /* Vibrant teal for highlights */
+    --primary-dark: #007b77;
+    /* Slightly darker teal for contrast */
+    --accent: #d1007a;
+    /* Bold magenta accent */
+    --accent-glow: #ff33b5;
+    /* Lighter neon magenta for hover/glow */
+    --background: #f8f9fb;
+    /* Soft off-white background */
+    --panel-bg: rgba(255, 255, 255, 0.85);
+    /* Translucent white panels */
+    --text: #0a0a0f;
+    /* Deep charcoal for readable text */
+    --weak: #ff3366;
+    /* Soft red/pink for warnings or errors */
+    --medium: #e6a800;
+    /* Warm golden-yellow for caution */
+    --strong: #00b35a;
+    /* Bright green for success indicators */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    /* background: radial-gradient(circle at top, var(--background), #000); */
+    background: var(--background);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    /* transition: background 0.4s ease, color 0.4s ease; */
+    transition: all 0.4s ease;
+}
+
+body.light-mode {
+    background: radial-gradient(circle at top, #e8f0ff, #ffffff);
+}
+
+.generator {
+    position: relative;
+    background: var(--panel-bg);
+    border: 2px solid var(--primary-dark);
+    /* box-shadow: 0 0 30px var(--primary-dark), inset 0 0 15px #004d40; */
+    box-shadow: 0 0 30px var(--primary-dark);
+    border-radius: 15px;
+    padding: 30px;
+    width: 520px;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+body.light-mode .generator {
+    box-shadow: 0 0 25px rgba(0, 102, 204, 0.3),
+        inset 0 0 8px rgba(255, 255, 255, 0.3);
+}
+
+.generator:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px var(--primary);
+}
+
+h1 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    color: var(--primary);
+    text-shadow: 0 0 2px var(--primary);
+    animation: soft-glow 2s infinite alternate;
+}
+
+.password-display {
+    background: var(--background);
+    border: 1px solid var(--primary-dark);
+    border-radius: 10px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: var(--text);
+    font-size: 1.1rem;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+body.light-mode .password-display {
+    background: #ffffff;
+    border: 1px solid var(--primary-dark);
+    box-shadow: inset 0 0 8px rgba(0, 102, 204, 0.3);
+}
+
+.copy-btn {
+    background: var(--primary);
+    border: none;
+    color: #000;
+    font-weight: 600;
+    border-radius: 5px;
+    padding: 6px 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background: #00ccaa;
+    box-shadow: 0 0 10px var(--primary);
+}
+
+.options {
+    text-align: left;
+    margin-bottom: 20px;
+    display: grid;
+    gap: 10px;
+}
+
+.options label {
+    font-size: 0.9rem;
+    cursor: pointer;
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+input[type="checkbox"] {
+    accent-color: var(--primary);
+    transform: scale(1.3);
+}
+
+.slider-container {
+    margin-bottom: 20px;
+}
+
+#length {
+    width: 100%;
+    accent-color: var(--primary);
+    cursor: pointer;
+}
+
+#lengthValue {
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.strength-bar {
+    height: 10px;
+    background: #222;
+    border-radius: 5px;
+    overflow: hidden;
+    border: 1px solid var(--primary);
+    margin-bottom: 20px;
+}
+
+body.light-mode .strength-bar {
+    background: #ddd;
+}
+
+.generate-btn {
+    background: var(--accent);
+    border: none;
+    color: white;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 15px var(--accent);
+}
+
+.generate-btn:hover {
+    background: var(--primary);
+    color: #000;
+    box-shadow: 0 0 25px var(--primary), 0 0 10px var(--accent-glow) inset;
+}
+
+.dark-mode-symbol {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 1.4rem;
+    color: var(--primary);
+    cursor: pointer;
+    transition: 0.4s ease;
+}
+
+.dark-mode-symbol i {
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    position: absolute;
+    right: 0;
+    cursor: pointer;
+    transition: 100ms all linear;
+}
+
+.dark-mode-symbol i:hover {
+    transform: rotate(20deg);
+}

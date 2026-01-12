@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="generator">
+
+        <label for="themeToggle" class="dark-mode-symbol">
+
+            <i id="themeIcon" class="fa-solid fa-sun"></i>
+        </label>
+
+        <h1>Password <br> Generator</h1>
+
+        <div class="password-display" id="passwordDisplay">
+            <span id="passwordText">Click Generate</span>
+            <button class="copy-btn" id="copyBtn">Copy</button>
+        </div>
+
+        <div class="options">
+            <label><input type="checkbox" id="uppercase" checked> Uppercase</label>
+            <label><input type="checkbox" id="lowercase" checked> Lowercase</label>
+            <label><input type="checkbox" id="numbers" checked> Numbers</label>
+            <label><input type="checkbox" id="symbols"> Symbols</label>
+        </div>
+
+        <div class="slider-container">
+            <label for="length">Length: <span id="lengthValue">8</span></label>
+            <input type="range" id="length" min="0" max="20" value="10" dataLengthSlider>
+        </div>
+
+        <div class="strength-bar">
+            <div class="strength-fill" id="strengthFill"></div>
+        </div>
+
+        <button class="generate-btn" id="generateBtn">Generate Password</button>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
