@@ -1,1 +1,2 @@
 # Password-Generator
+This is a web application built with HTML, CSS, and JavaScript that creates secure, customizable passwords. Users can select options like uppercase, lowercase, numbers, and symbols, adjust the password length with a slider, and instantly view the password strength through a color‑coded indicator. It also includes features such as copy to clipboard and a dark/light mode toggle for a modern, user‑friendly experience.
